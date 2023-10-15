@@ -24,5 +24,11 @@ lazy val livechart = project.in(file("."))
     /* Depend on the scalajs-dom library.
      * It provides static types for the browser DOM APIs.
      */
-    libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.4.0",
+    libraryDependencies ++= List(
+      "org.scala-js" %%% "scalajs-dom" % "2.4.0",
+
+      // October 15th Slinky `main`: https://github.com/shadaj/slinky
+      // Supports React 18
+      "me.shadaj" %%% "slinky-web" % "0.7.4+1-e3ba8c29", // React DOM, HTML and SVG tags
+    )
   )
